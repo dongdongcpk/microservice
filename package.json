@@ -1,0 +1,67 @@
+{
+  "name": "microservice-framework",
+  "version": "1.0.0",
+  "description": "a web framework",
+  "private": true,
+  "main": "src/app.js",
+  "scripts": {
+    "start": "NODE_ENV=development node src/app.js",
+    "test": "NODE_ENV=development jest",
+    "lint": "eslint . --fix --format codeframe",
+    "precommit": "lint-staged",
+    "commitmsg": "commitlint -E GIT_PARAMS"
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "eslint --fix --format codeframe",
+      "git add"
+    ]
+  },
+  "jest": {
+    "verbose": true,
+    "notify": true,
+    "testEnvironment": "node",
+    "collectCoverage": true,
+    "roots": [
+      "<rootDir>/src"
+    ],
+    "testPathIgnorePatterns": [
+      "__tests__/(fixtures|__mocks__)/"
+    ],
+    "coverageReporters": [
+      "html",
+      "text",
+      "text-summary"
+    ]
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "gitlab http url"
+  },
+  "author": "yaodong <wangyaodong0126@163.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@koa/router": "^8.0.8",
+    "@sufang/logger": "git+https://github.com/dongdongcpk/logger.git",
+    "camelcase": "^5.3.1",
+    "globby": "^11.0.0",
+    "js-yaml": "^3.13.1",
+    "koa": "^2.11.0",
+    "koa-bodyparser": "^4.2.1",
+    "node-graceful": "^3.0.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^7.1.2",
+    "@commitlint/config-angular": "^7.1.2",
+    "eslint": "^5.5.0",
+    "eslint-config-prettier": "^3.0.1",
+    "eslint-plugin-prettier": "^2.6.2",
+    "fs-extra": "^8.1.0",
+    "husky": "^0.14.3",
+    "jest": "^23.6.0",
+    "lint-staged": "^7.2.2",
+    "prettier": "^1.14.2",
+    "supertest": "^4.0.2"
+  }
+}

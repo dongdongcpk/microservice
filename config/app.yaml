@@ -1,0 +1,14 @@
+serviceName: &serviceName my-service
+
+port: 8080
+
+log:
+  name: *serviceName
+  level: debug
+
+baseURI: '/base'
+
+check:
+  http: ''
+  interval: '5s'
+  timeout: '10s'
