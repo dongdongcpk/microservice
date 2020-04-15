@@ -7,8 +7,3 @@ log:
   level: debug
 
 baseURI: '/base'
-
-check:
-  http: ''
-  interval: '5s'
-  timeout: '10s'
